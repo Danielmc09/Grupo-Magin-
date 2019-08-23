@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class Usuarios extends Seeder
 {
@@ -15,7 +16,8 @@ class Usuarios extends Seeder
             'name' => 'Daniel',
             'documento' => '1105615169',
             'email' => 'admin@mail.co',
-            'password' => bcrypt('admin123')
+            'password' => bcrypt('admin123'),
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }
 }
