@@ -1,0 +1,1 @@
+Elaborado por Daniel Mendieta Tecnolodo en analisis y desarrollo de sitemas de informacion. 
