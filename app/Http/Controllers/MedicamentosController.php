@@ -13,7 +13,7 @@ class MedicamentosController extends Controller
      */
     public function index()
     {
-        //
+        return view('medicamentos.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class MedicamentosController extends Controller
      */
     public function create()
     {
-        //
+        dd('Hola');
     }
 
     /**
