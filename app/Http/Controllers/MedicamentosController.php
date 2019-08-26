@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Medicamentos;
+use App\Http\Requests\Validacion;
 
 class MedicamentosController extends Controller
 {
@@ -13,7 +15,8 @@ class MedicamentosController extends Controller
      */
     public function index()
     {
-        return view('medicamentos.index');
+        $m = Medicamentos::all();
+        return view('medicamentos.index', compact('m'));
     }
 
     /**
@@ -23,18 +26,19 @@ class MedicamentosController extends Controller
      */
     public function create()
     {
-        dd('Hola');
+        return view('medicamentos.create');
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Validacion $request)
     {
-        //
+        Medicamentos::create($request->all());
+        return redirect()->route('medicamentos.create')->with('mensaje', 'Medicamento creado con exito');
     }
 
     /**
