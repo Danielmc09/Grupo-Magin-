@@ -24,7 +24,7 @@ class Usuarios extends Seeder
             'name' => 'Camilo',
             'documento' => '6010104',
             'email' => 'dani@mail.co',
-            'password' => bcrypt('admin123'),
+            'password' => bcrypt('12345'),
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }
