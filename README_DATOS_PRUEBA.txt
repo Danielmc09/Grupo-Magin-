@@ -2,6 +2,7 @@ Elaborado por Daniel Mendieta Tecnolodo en analisis y desarrollo de sitemas de i
 
 Tecnologias utilizadas para el proyecto. 
 
+●   Laragon
 ●	Laravel 5.8
 ●	jQuery Validation, Bootstrap.
 ●	MySQL.
@@ -19,4 +20,4 @@ password = admin123
 User-2
 nombre = Camilo
 documento = 6010104
-password = admin123
+password = 12345
