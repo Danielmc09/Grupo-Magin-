@@ -38,18 +38,7 @@ class MedicamentosController extends Controller
     public function store(Validacion $request)
     {
         Medicamentos::create($request->all());
-        return redirect()->route('medicamentos.create')->with('mensaje', 'Medicamento creado con exito');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->route('medicamentos.index')->with('mensaje', 'Medicamento creado con exito');
     }
 
     /**
@@ -60,7 +49,8 @@ class MedicamentosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $m = Medicamentos::findOrFail($id);
+        return view('medicamentos.edit', compact('m'));   
     }
 
     /**
@@ -70,9 +60,10 @@ class MedicamentosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Validacion $request, $id)
     {
-        //
+        Medicamentos::findOrFail($id)->update($request->all());
+        return redirect()->route('medicamentos.index')->with('mensaje', 'Medicamento actualizado con exito');
     }
 
     /**
@@ -81,8 +72,16 @@ class MedicamentosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        if ($request->ajax()) {
+            if (Medicamentos::destroy($id)) {
+                return response()->json(['mensaje' => 'ok']);
+            } else {
+                return response()->json(['mensaje' => 'ng']);
+            }
+        } else {
+            abort(404);
+        }
     }
 }

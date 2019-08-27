@@ -24,7 +24,7 @@ class Validacion extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|max:30|unique:medicamentos,nombre' . $this->route('id'),
+            'nombre' => 'required|max:30',
             'proveedor' => 'required|max:30',
             'laboratorio' => 'required|max:30',
             'stock' => 'required'
