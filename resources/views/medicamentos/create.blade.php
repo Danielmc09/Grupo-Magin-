@@ -5,28 +5,28 @@
 @endsection
 @section('content')
 <div class="row">
-        <div class="col-lg-12">
-           @include('includes.form-error')
-            <div class="box box-danger">
-                <div class="box-header with-border">
-                    <h1 class="text-center text-info">Crear Medicamentos</h1>
-                    <div class="box-tools pull-right">
-                        <a href="{{Route('medicamentos.index')}}" class="btn btn-block btn-info btn-sm">
-                            <i class="fa fa-fw fa-reply-all"></i>Volver al listado
-                        </a>
-                    </div>
+    <div class="col-lg-12">
+        @include('includes.form-error')
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h1 class="text-center text-info">Crear Medicamentos</h1>
+                <div class="box-tools pull-right">
+                    <a href="{{Route('medicamentos.index')}}" class="btn btn-block btn-info btn-sm">
+                        <i class="fa fa-fw fa-reply-all"></i>Volver al listado
+                    </a>
                 </div>
-                <form action="{{Route('medicamentos.store')}}" id="form-general" method="POST">
-                   @csrf
-                    <div class="box-body">
-                            @include('includes.form')
-                    </div>     
-                        <div class="box-footer">
-                            @include('includes.boton-crear')
-                        </div>
-                </form>
             </div>
-        </div> 
-    </div>
+            <form action="{{Route('medicamentos.store')}}" id="form-general" method="POST">
+                @csrf
+                <div class="box-body">
+                        @include('includes.form')
+                </div>     
+                    <div class="box-footer">
+                        @include('includes.boton-crear')
+                    </div>
+            </form>
+        </div>
+    </div> 
+</div>
 
 @endsection
